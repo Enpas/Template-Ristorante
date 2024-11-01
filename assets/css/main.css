@@ -1,0 +1,447 @@
+/*  */
+:root {
+    --primary: #20a100;
+    --secondary: #fff12e;
+    --light: #cecece;
+    --light2: #f1f1f1;
+    --dark: #0d0f13;
+    --dark2: #222631;
+    --dark3: #030303;
+}
+
+/*  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul { list-style: none; }
+
+a { text-decoration: none; }
+
+input, textarea { 
+    box-shadow: none !important; 
+    border: none !important;
+}
+
+/*  */
+::-webkit-scrollbar { width: 10px; }
+  
+::-webkit-scrollbar-thumb { background: var(--secondary); }
+
+.container-xxl { max-width: 2000px; }
+
+.bg-dark { background-color: var(--dark) !important; }
+
+.bg-dark2 { background-color: var(--dark2); }
+
+.bg-dark3 { background-color: var(--dark3) !important; }
+
+.text-primary { color: var(--primary) !important; }
+
+.text-secondary { color: var(--secondary) !important; }
+
+.text-body { color: var(--primary) !important; }
+
+h1, h4, h5, h6 { color: var(--light); }
+
+p { font-size: 1.15em; }
+
+.border-primary { border-color: var(--primary) !important; }
+
+.border-bottom { border-bottom: 2px solid var(--dark) !important; }
+
+.form-control, label { color: var(--dark2) !important; }
+
+.display-3 { font-size: 3.5em; }
+
+.py-5 { padding-top: 5em !important; }
+
+.g-5 { 
+    display: flex;
+    justify-content: space-around;
+}
+
+/*  */
+body {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--light2);
+    background-color: var(--dark);
+}
+
+.up-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    z-index: 99;
+    opacity: 0;
+    border: none;
+    color: var(--light2);
+    background-color: var(--primary);
+    transition: 0.5s ease-in-out !important;
+    pointer-events: none;
+}
+
+.up-btn:hover {
+    color: var(--dark2);
+    background-color: var(--secondary);
+}
+
+.up-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.btn {
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: .5s;
+    border: 2px solid transparent !important;
+    border-radius: 2px;
+    box-shadow: none !important; 
+}
+
+.btn:hover {
+    border: 2px solid var(--light2) !important;
+    background-color: transparent !important;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    background-color: var(--primary);
+    border: none;
+    color: var(--light2);
+}
+
+.btn.btn-primary:focus {
+    box-shadow: none !important;
+}
+
+.btn-team {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 2px;
+}
+
+/*  */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark);
+    z-index: 11;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .loader > * { transition: 0.5s ease-in-out; }
+  
+  .loader.loaded > * { opacity: 0; }
+  
+  .loader.loaded {
+    transition-delay: 250ms;
+    transform: translateY(100%);
+  }
+  
+  .load {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid var(--primary);
+    border-block-start-color: var(--dark);
+    margin-block-end: 45px;
+    animation: rotate360 1s linear infinite;
+  }
+  
+  @keyframes rotate360 {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(1turn); }
+  }
+
+/*  */
+.navbar-dark .navbar-nav .nav-link {
+    position: relative;
+    margin-left: 25px;
+    padding: 0 0;
+    font-size: 1.15em;
+    color: var(--light) !important;
+    text-transform: uppercase;
+    font-weight: 500;
+    outline: none;
+    transition: .5s;
+}
+
+.fixed-top.navbar-dark .navbar-nav .nav-link {
+    padding: 20px 0;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--primary) !important;
+}
+
+.navbar-dark .navbar-brand img {
+    max-height: 60px;
+    transition: .5s;
+}
+
+.fixed-top.navbar-dark .navbar-brand img {
+    max-height: 60px;
+}
+
+.burg-menu {
+    display: none;
+    border: none;
+    color: var(--primary);
+    background-color: transparent;
+    font-size: 1.5em;
+}
+
+/*  */
+.home-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.8)), url(../images/lasagna-back.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-header img {
+    animation: imgRotate 25000ms linear infinite;
+}
+
+@keyframes imgRotate { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+}
+
+/*  */
+.section-title {
+    position: relative;
+    display: inline-block;
+    font-weight: 800;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    left: -55px;
+    margin-top: -1px;
+    background: var(--primary);
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    right: -55px;
+    margin-top: -1px;
+    background: var(--primary);
+}
+
+.section-title.text-start::before,
+.section-title.text-end::after {
+    display: none;
+}
+
+/*  */
+.services-item {
+    box-shadow: 0 0 45px rgba(255, 255, 255, 0.1);
+    transition: .5s;
+}
+
+.services-item:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    background: var(--primary);
+}
+
+.services-item * {
+    transition: .5s;
+}
+
+.services-item:hover * {
+    color: var(--light2) !important;
+}
+
+/*  */
+.nav-pills .nav-item .active {
+    border-bottom: 2px solid var(--primary);
+}
+
+/*  */
+.team-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    height: calc(100% - 38px);
+    transition: .5s;
+}
+
+.team-item img {
+    transition: .5s;
+}
+
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+.team-item:hover {
+    height: 100%;
+}
+
+/*  */
+.reviews-carousel .owl-item .reviews-item,
+.reviews-carousel .owl-item.center .reviews-item * {
+    transition: .5s;
+}
+
+.reviews-carousel .owl-item.center .reviews-item {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.reviews-carousel .owl-item.center .reviews-item * {
+    color: var(--light2) !important;
+}
+
+.reviews-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.reviews-carousel .owl-dots button {
+    border: 2px solid var(--light);
+}
+
+.reviews-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #CCCCCC;
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.reviews-carousel .owl-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/*  */
+.footer .btn.btn-social {
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.30em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light2) !important;
+    border: 2px solid var(--light2) !important;
+    border-radius: 2px;
+    transition: .3s;
+}
+
+.footer p i {
+    margin-right: 15px;
+}
+
+.footer .btn.btn-social:hover {
+    border-color: transparent !important;
+    background-color: var(--primary) !important;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    color: var(--light);
+    border-top: 2px solid var(--primary);
+}
+
+/*  */
+@media (max-width: 1920px) {
+    .container-xxl {
+        max-width: 1500px;
+    }
+}
+
+@media (max-width: 992px) {
+    .fixed-top.navbar-dark {
+        position: relative;
+    }
+
+    .mt-3 {
+        margin-top: 0 !important;
+    }
+
+    .burg-menu {
+        display: block;
+    }
+
+    .py-5 { padding-top: 0 !important; }
+
+    .up-btn {
+        right: 25px;
+        bottom: 25px;
+    }
+
+    .navbar-dark .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, .1)
+    }
+
+    .navbar-dark .navbar-nav .nav-link,
+    .fixed-top.navbar-dark .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+    }
+
+    .navbar-dark .navbar-brand img {
+        max-height: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-dark {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background: transparent !important;
+    }
+    
+    .fixed-top.navbar-dark {
+        position: fixed;
+        margin-top: 0 !important;
+        background: var(--dark3) !important;
+    }
+}
